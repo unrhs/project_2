@@ -14,8 +14,8 @@ const passport = require("./helpers/passports");
 
 
 mongoose
-  .connect('mongodb://localhost/filas', {useNewUrlParser: true})
-  .then(x => {
+.connect(process.env.DB, {useNewUrlParser: true})
+.then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
